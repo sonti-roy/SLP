@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import mediapipe as mp
-import cv2
 from skimage.transform import resize
 from sklearn.cluster import KMeans
 import pickle
@@ -9,6 +8,7 @@ from skimage.feature import ORB
 from skimage.color import rgb2gray
 from skimage.io import imread
 from PIL import Image
+import cv2
 # import mediapipe as mp
 
 
