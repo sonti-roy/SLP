@@ -92,8 +92,8 @@ if img_file_buffer is not None:
     image = cv2.imdecode(np.frombuffer(img_file_buffer.read(), np.uint8), 1)
 
     # Display the uploaded image
-    st.subheader("Uploaded Image")
-    st.image(image, caption="Uploaded Image", use_column_width=True)
+    # st.subheader("Uploaded Image")
+    # st.image(image, caption="Uploaded Image", use_column_width=True)
 
     # Detect hand and crop if detected
     hand_cropped = detect_hand(image)
@@ -117,7 +117,8 @@ if img_file_buffer is not None:
     
     if hand_cropped is not None:
         # Apply k-means clustering to create bins/clusters
-        image = imread(hand_cropped)
+        image = cv2.imdecode(np.frombuffer(hand_cropped.read(), np.uint8), 1)
+        image = imread(image)
         image = rgb2gray(image)
         image = resize(image, (64, 64,3))
         predicted_label = loaded_model.predict(image.flatten().reshape(1, -1))
