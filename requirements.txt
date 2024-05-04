@@ -1,6 +1,7 @@
 streamlit
 numpy
+mediapipe
 opencv-python-headless
 scikit-learn
 scikit-image
-mediapipe
+
