@@ -100,7 +100,7 @@ if img_file_buffer is not None:
 # if img_file_buffer is not None:
     # Display the cropped hand region
     # st.subheader("Cropped Hand Region")
-    # plt.imshow(cv2.cvtColor(hand_cropped, cv2.COLOR_BGR2RGB))
+    # st.imshow(cv2.cvtColor(hand_cropped, cv2.COLOR_BGR2RGB))
     # plt.axis('off')
     # st.pyplot()
     
@@ -117,7 +117,8 @@ if img_file_buffer is not None:
     
     if hand_cropped is not None:
         # Apply k-means clustering to create bins/clusters
-        image = cv2.imread(hand_cropped)
+        # read the cropped image for feature extraction
+        image = hand_cropped
         image = rgb2gray(image)
         image = resize(image, (64, 64,3))
         predicted_label = loaded_model.predict(image.flatten().reshape(1, -1))
