@@ -21,8 +21,10 @@ from skimage.color import rgb2gray
 # # import pickle
 
 
+# Display title
+st.title("Sign Language Recognition")
 
-img_file_buffer = st.camera_input("Take a picture")
+img_file_buffer = st.camera_input("Take a picture with the sign with your right hand")
 
 # Initialize holistic model and drawing utils
 mp_holistic = mp.solutions.holistic
@@ -80,8 +82,7 @@ def detect_hand(image):
     else:
         return None
 
-# Display title
-st.title("Hand Detection and Cropping")
+
 
 
 if img_file_buffer is not None:
