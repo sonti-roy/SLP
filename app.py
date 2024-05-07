@@ -117,7 +117,7 @@ if img_file_buffer is not None:
         # Apply k-means clustering to create bins/clusters
         # read the cropped image for feature extraction
         image = hand_cropped
-        image = rgb2gray(image)
+        # image = rgb2gray(image)
         image = resize(image, (64, 64,3))
         predicted_label = loaded_model.predict(image.flatten().reshape(1, -1))
         
