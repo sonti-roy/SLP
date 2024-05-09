@@ -123,6 +123,8 @@ if img_file_buffer is not None:
         
         predicted_class = Categories[predicted_label[0]]
         st.write("The predicted character is: ", predicted_class)
+        
+        st.cache.clear()
     
     
     
